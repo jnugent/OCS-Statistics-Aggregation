@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE locale SYSTEM "../../../../../lib/pkp/dtd/locale.dtd">
+
+<!--
+  * locale.xml
+  *
+  * Copyright (c) 2003-2010 John Willinsky
+  * Distributed under the GNU GPL v2. For full terms see the file docs/COPYING.
+  *
+  * Statistics Aggregation plugin localization strings for the en_US (U.S. English) locale.
+  *
+  * $Id$
+  -->
+ 
+<locale name="en_US" full_name="U.S. English">
+
+	<!-- Statistics Aggregation -->
+	<message key="plugins.generic.statisticsAggregation.displayName">Statistics Aggregation Plugin</message>
+	<message key="plugins.generic.statisticsAggregation.description"><![CDATA[Integrate OJS with Statistics Aggregation.]]></message>
+	<message key="plugins.generic.statisticsAggregation.enabled">The Statistics Aggregation Plugin has been enabled.</message>
+	<message key="plugins.generic.statisticsAggregation.disabled">The Statistics Aggregation Plugin has been disabled.</message>
+	<!-- Statistics Aggregation Settings Management -->
+	<message key="plugins.generic.statisticsAggregation.manager.settings">Settings</message>
+	<message key="plugins.generic.statisticsAggregation.manager.viewstats">View Stats</message>
+	<message key="plugins.generic.statisticsAggregation.manager.statisticsAggregationSettings">Statistics Aggregation Settings</message>
+	<message key="plugins.generic.statisticsAggregation.manager.settings.description"><![CDATA[<p>With this plugin enabled Statistics Aggregation may be used to collect and analyze web site usage and traffic for this journal. </p>]]>
+</message>
+	<message key="plugins.generic.statisticsAggregation.manager.settings.statisticsAggregationSiteId">Account number</message>
+	<message key="plugins.generic.statisticsAggregation.manager.settings.statisticsAggregationSiteEmail">Account Email (for your login)</message>
+	<message key="plugins.generic.statisticsAggregation.manager.settings.statisticsAggregationSiteEmailConfirm">Confirm Email</message>
+	<message key="plugins.generic.statisticsAggregation.manager.settings.statisticsAggregationSiteIdRequired">Please enter an account number.</message>
+	<message key="plugins.generic.statisticsAggregation.manager.settings.statisticsAggregationSiteEmailRequired">Please enter an email address and confirm it.</message>
+	<message key="plugins.generic.statisticsAggregation.manager.settings.statisticsAggregationSiteEmailConfirmRequired">Please confirm your email address.</message>
+	<message key="plugins.generic.statisticsAggregation.manager.settings.emailsMustMatch">The two email addresses must match.</message>
+	<message key="plugins.generic.statisticsAggregation.manager.settings.trackingCode">Tracking code</message>
+	<message key="plugins.generic.statisticsAggregation.manager.settings.getButtonLabel">Fetch Code</message>
+</locale>
