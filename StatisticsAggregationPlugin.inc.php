@@ -165,8 +165,11 @@ class StatisticsAggregationPlugin extends GenericPlugin {
 	 * @param String $statisticsAggregationSiteId the Hash Code for this Conference.
 	 */
 	function sendData($statsArray, $statisticsAggregationSiteId) {
+		$this->import('JSONEncoder');
+		$encoder = new JSONEncoder();
+		$encoder->setAdditionalAttributes($statsArray);
+		$jsonString = $encoder->getString();
 
-		$jsonString = json_encode($statsArray);
 		$this->import('StatisticsSocket');
 		$statisticsSocket = new StatisticsSocket();
  		$statisticsSocket->send($statisticsAggregationSiteId, $jsonString);

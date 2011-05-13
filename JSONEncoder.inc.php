@@ -18,7 +18,7 @@ class JSONEncoder {
 	* @return string
 	*/
 	function getString() {
-		$jsonString = "{";
+		$jsonString = "{\"status\": \"\"";
 			if(isset($this->additionalAttributes)) {
 				foreach($this->additionalAttributes as $key => $value) {
 					$jsonString .= ", \"$key\": " . $this->_json_encode($value);
