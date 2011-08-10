@@ -216,7 +216,6 @@ class StatisticsAggregationPlugin extends GenericPlugin {
 			$statsArray['ref'] = '';
 		}
 		$statsArray['uri'] =& Request::getRequestPath();
-		error_log(var_export($statsArray, TRUE));
 		return $statsArray;
 	}
 
