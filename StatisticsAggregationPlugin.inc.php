@@ -84,10 +84,11 @@ class StatisticsAggregationPlugin extends GenericPlugin {
 	 */
 	function getManagementVerbs() {
 		$verbs = array();
+		$verbs[] = array('readme', Locale::translate('plugins.generic.statisticsAggregation.manager.readme'));
 		if ($this->getEnabled()) {
 			$verbs[] = array('disable', Locale::translate('manager.plugins.disable'));
 			$verbs[] = array('settings', Locale::translate('plugins.generic.statisticsAggregation.manager.settings'));
-			$verbs[] = array('viewstats', Locale::translate('plugins.generic.statisticsAggregation.manager.viewstats') );
+			$verbs[] = array('viewstats', Locale::translate('plugins.generic.statisticsAggregation.manager.viewstats'));
 		} else {
 			$verbs[] = array('enable', Locale::translate('manager.plugins.enable'));
 		}
@@ -316,6 +317,9 @@ class StatisticsAggregationPlugin extends GenericPlugin {
 				if ($statisticsAggregationSiteId != '') {
 					Request::redirectUrl('http://warhammer.hil.unb.ca/stats/' . $statisticsAggregationSiteId);
 				}
+				return true;
+			case 'readme':
+				Request::redirectUrl('http://warhammer.hil.unb.ca/readme.html');
 				return true;
 			default:
 				// Unknown management verb
