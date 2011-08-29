@@ -88,7 +88,6 @@ class StatisticsAggregationPlugin extends GenericPlugin {
 		if ($this->getEnabled()) {
 			$verbs[] = array('disable', Locale::translate('manager.plugins.disable'));
 			$verbs[] = array('settings', Locale::translate('plugins.generic.statisticsAggregation.manager.settings'));
-			$verbs[] = array('viewstats', Locale::translate('plugins.generic.statisticsAggregation.manager.viewstats'));
 		} else {
 			$verbs[] = array('enable', Locale::translate('manager.plugins.enable'));
 		}
@@ -310,12 +309,6 @@ class StatisticsAggregationPlugin extends GenericPlugin {
 					$this->setBreadCrumbs(true);
 					$form->initData();
 					$form->display();
-				}
-				return true;
-			case 'viewstats':
-				$statisticsAggregationSiteId = $this->getSetting($conference->getId(), 0, 'statisticsAggregationSiteId');
-				if ($statisticsAggregationSiteId != '') {
-					Request::redirectUrl('http://warhammer.hil.unb.ca/stats/' . $statisticsAggregationSiteId);
 				}
 				return true;
 			case 'readme':

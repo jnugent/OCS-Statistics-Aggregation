@@ -14,7 +14,9 @@
 {/strip}
 <div id="statisticsAggregationSettings">
 <div id="description">{translate key="plugins.generic.statisticsAggregation.manager.settings.description"}</div>
-
+{if $statisticsAggregationSiteId != ''}
+        <p><a href="http://warhammer.hil.unb.ca/stats/{$statisticsAggregationSiteId|escape}/landing.php" target="_blank">{translate key="plugins.generic.statisticsAggregation.manager.viewstats" }</a></p>
+{/if}
 <div class="separator"></div>
 
 <br />
