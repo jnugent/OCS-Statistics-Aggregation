@@ -172,7 +172,8 @@ class StatisticsAggregationPlugin extends GenericPlugin {
 
 		$this->import('StatisticsSocket');
 		$statisticsSocket = new StatisticsSocket();
- 		$statisticsSocket->send($statisticsAggregationSiteId, $jsonString);
+		$statisticsSocket->setJSONString($jsonString);
+		$statisticsSocket->setSiteId($statisticsAggregationSiteId);
 	}
 
 	/**
