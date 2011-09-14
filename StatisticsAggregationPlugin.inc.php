@@ -30,6 +30,8 @@ class StatisticsAggregationPlugin extends GenericPlugin {
 		$this->addLocaleData();
 		if ($success) {
 			HookRegistry::register('TemplateManager::display', array(&$this, 'callbackInsertSA'));
+			HookRegistry::register ('Templates::Admin::Index::AdminFunctions', array(&$this, 'displayMenuOption'));
+			HookRegistry::register ('Templates::Manager::Index::ManagementPages', array(&$this, 'displayMenuOption'));
 			return true;
 		} else {
 			return false;
@@ -325,6 +327,21 @@ class StatisticsAggregationPlugin extends GenericPlugin {
 				assert(false);
 				return false;
 		}
+	}
+
+	function displayMenuOption($hookName, $args) {
+
+		$params =& $args[0];
+		$smarty =& $args[1];
+		$output =& $args[2];
+
+		$conference =& Request::getConference();
+		$statisticsAggregationSiteId = $this->getSetting($conference->getConferenceId(), 0, 'statisticsAggregationSiteId');
+		if ($statisticsAggregationSiteId != '') {
+			$output .= '<li>&#187; <a href="http://warhammer.hil.unb.ca/' . $statisticsAggregationSiteId . '/landing.php" target="_blank">' . 
+				Locale::translate('plugins.generic.statisticsAggregation.manager.viewstats') . '</a></li>';
+		}
+		return false;
 	}
 }
 ?>
