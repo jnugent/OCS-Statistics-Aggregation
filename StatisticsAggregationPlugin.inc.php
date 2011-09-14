@@ -139,13 +139,18 @@ class StatisticsAggregationPlugin extends GenericPlugin {
 					// Log the request as an paper view.
 
 					$galley = $templateMgr->get_template_vars('galley');
-					if ($galley != null) { // shouldn't be, but test anyway.
-						$paperDao =& DAORegistry::getDAO('PaperDAO');
-						$paper =& $paperDao->getPaper($galley->getPaperId());
-
-						$statsArray = $this->buildStatsArray($galley, $paper);
-						$this->sendData($statsArray, $statisticsAggregationSiteId);
+                                        $paper = $templateMgr->get_template_vars('paper');
+                                        // we do some tests and checks to see if we finally end up with a Paper object
+					if ($paper == null) {
+						if ($galley != null) {
+							$paperDao =& DAORegistry::getDAO('PaperDAO');
+							$paper =& $paperDao->getPaper($galley->getPaperId());
+						}
 					}
+
+					$statsArray = $this->buildStatsArray($galley, $paper);
+					$this->sendData($statsArray, $statisticsAggregationSiteId);
+
 					break;
 					default:
 						$statsArray = $this->buildStatsArray(null, null); // regular page view, no galley or article

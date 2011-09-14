@@ -53,7 +53,7 @@ class StatisticsAggregationSettingsForm extends Form {
 			'statisticsAggregationSiteId' => $plugin->getSetting($conferenceId, 0, 'statisticsAggregationSiteId'),
 			'statisticsAggregationSiteEmail' => $plugin->getSetting($conferenceId, 0, 'statisticsAggregationSiteEmail'),
 			'statisticsAggregationSiteEmailConfirm' => $plugin->getSetting($conferenceId, 0, 'statisticsAggregationSiteEmailConfirm'),
-			'disableForm' => ($plugin->getSetting($this->journalId, 'statisticsAggregationSiteId') != '') ? true : false
+			'disableForm' => ($plugin->getSetting($conferenceId, 0, 'statisticsAggregationSiteId') != '') ? true : false
 		);
 	}
 
