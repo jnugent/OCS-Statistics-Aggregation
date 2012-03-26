@@ -49,11 +49,11 @@ class StatisticsAggregationPlugin extends GenericPlugin {
 	}
 
 	function getDisplayName() {
-		return Locale::translate('plugins.generic.statisticsAggregation.displayName');
+		return __('plugins.generic.statisticsAggregation.displayName');
 	}
 
 	function getDescription() {
-		return Locale::translate('plugins.generic.statisticsAggregation.description');
+		return __('plugins.generic.statisticsAggregation.description');
 	}
 
 	/**
@@ -86,12 +86,12 @@ class StatisticsAggregationPlugin extends GenericPlugin {
 	 */
 	function getManagementVerbs() {
 		$verbs = array();
-		$verbs[] = array('readme', Locale::translate('plugins.generic.statisticsAggregation.manager.readme'));
+		$verbs[] = array('readme', __('plugins.generic.statisticsAggregation.manager.readme'));
 		if ($this->getEnabled()) {
-			$verbs[] = array('disable', Locale::translate('manager.plugins.disable'));
-			$verbs[] = array('settings', Locale::translate('plugins.generic.statisticsAggregation.manager.settings'));
+			$verbs[] = array('disable', __('manager.plugins.disable'));
+			$verbs[] = array('settings', __('plugins.generic.statisticsAggregation.manager.settings'));
 		} else {
-			$verbs[] = array('enable', Locale::translate('manager.plugins.enable'));
+			$verbs[] = array('enable', __('manager.plugins.enable'));
 		}
 		return $verbs;
 	}
@@ -278,12 +278,12 @@ class StatisticsAggregationPlugin extends GenericPlugin {
 			case 'enable':
 				$this->setEnabled(true);
 				$returner = false;
-				$message = Locale::translate('plugins.generic.statisticsAggregation.enabled');
+				$message = __('plugins.generic.statisticsAggregation.enabled');
 				break;
 			case 'disable':
 				$this->setEnabled(false);
 				$returner = false;
-				$message = Locale::translate('plugins.generic.statisticsAggregation.disabled');
+				$message = __('plugins.generic.statisticsAggregation.disabled');
 				break;
 
 			case 'getNewHash':
@@ -339,7 +339,7 @@ class StatisticsAggregationPlugin extends GenericPlugin {
 		$statisticsAggregationSiteId = $this->getSetting($conference->getConferenceId(), 0, 'statisticsAggregationSiteId');
 		if ($statisticsAggregationSiteId != '') {
 			$output .= '<li>&#187; <a href="http://warhammer.hil.unb.ca/stats/' . $statisticsAggregationSiteId . '/landing.php" target="_blank">' . 
-				Locale::translate('plugins.generic.statisticsAggregation.manager.viewstats') . '</a></li>';
+				__('plugins.generic.statisticsAggregation.manager.viewstats') . '</a></li>';
 		}
 		return false;
 	}
